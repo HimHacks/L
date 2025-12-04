@@ -79,7 +79,7 @@
         </div>
         <div class="preview_container">
             <h3>MY PHOTO GALLERY</h3>
-            <img src="./images/architecture.jpg" alt="No Image Selected" id="preview_image">
+            <img src="architecture.jpg" alt="No Image Selected" id="preview_image">
         </div>
         <div class="gallery_container" id="gallery_image"></div>
     </div>
@@ -87,7 +87,7 @@
         var image_names = ["Architecture.jpg","fox.jpg","macaw.jpg","night.jpg","sunset.jpg","tulips.jpg","zebra.jpg"];
         var image = "";
         for (var i = 0; i < image_names.length; i++) {
-            image += `<div><img src="images/${image_names[i]}" onclick="previewImages(this.src)"></div>`;
+            image += `<div><img src="image_names[i]" onclick="previewImages(this.src)"></div>`;
         }
         document.getElementById("gallery_image").innerHTML = image;
         function previewImages(image_data) {
@@ -96,3 +96,4 @@
     </script>
 </body>
 </html>
+
