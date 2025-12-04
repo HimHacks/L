@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Website</title>
+    <style>
+        .main {
+            width: 1000px;
+            margin: auto;
+            font-family: Trebuchet MS, sans-serif;
+            background: linear-gradient(to right, lightblue, lightgreen);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+            color: #333;
+            text-align: center;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            transition: transform 0.3s;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, purple, skyblue);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        .preview_container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        .preview_container img {
+            width: 100%;
+            height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery_container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        .gallery_container img {
+            width: 200px;
+            height: 150px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .gallery_container img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h2>Welcome To My</h2>
+            <h1><strong>IMAGE GALLERY</strong></h1>
+        </div>
+        <div class="preview_container">
+            <h3>MY PHOTO GALLERY</h3>
+            <img src="./images/architecture.jpg" alt="No Image Selected" id="preview_image">
+        </div>
+        <div class="gallery_container" id="gallery_image"></div>
+    </div>
+    <script>
+        var image_names = ["Architecture.jpg","fox.jpg","macaw.jpg","night.jpg","sunset.jpg","tulips.jpg","zebra.jpg"];
+        var image = "";
+        for (var i = 0; i < image_names.length; i++) {
+            image += `<div><img src="images/${image_names[i]}" onclick="previewImages(this.src)"></div>`;
+        }
+        document.getElementById("gallery_image").innerHTML = image;
+        function previewImages(image_data) {
+            document.getElementById("preview_image").setAttribute("src", image_data);
+        }
+    </script>
+</body>
+</html>
